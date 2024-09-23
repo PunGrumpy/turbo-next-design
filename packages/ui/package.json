@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
+    "./input": "./src/input.tsx",
     "./globals.css": "./src/globals.css",
     "./postcss.config": "./postcss.config.mjs",
     "./tailwind.config": "./tailwind.config.ts",
@@ -11,6 +12,7 @@
     "./components/*": "./src/components/*.tsx"
   },
   "scripts": {
+    "generate:component": "turbo gen react-component",
     "generate:shadcn": "pnpm dlx shadcn@latest",
     "lint": "eslint . --max-warnings 0"
   },
