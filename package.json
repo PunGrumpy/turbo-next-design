@@ -6,7 +6,9 @@
     "dev": "turbo dev",
     "format": "prettier --write .",
     "lint": "turbo lint",
-    "lint:fix": "turbo lint -- --fix"
+    "lint:fix": "turbo lint -- --fix",
+    "ui:component": "pnpm --filter @repo/ui generate:component",
+    "ui:shadcn": "pnpm --filter @repo/ui generate:shadcn"
   },
   "devDependencies": {
     "prettier": "^3.2.5",
