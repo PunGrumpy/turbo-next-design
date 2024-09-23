@@ -4,11 +4,13 @@
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
-    "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write .",
+    "lint": "turbo lint"
   },
   "devDependencies": {
     "prettier": "^3.2.5",
+    "prettier-plugin-packagejson": "^2.5.2",
+    "prettier-plugin-tailwindcss": "^0.6.6",
     "turbo": "^2.1.2",
     "typescript": "^5.4.5"
   },
