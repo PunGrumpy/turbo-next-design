@@ -5,7 +5,8 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "format": "prettier --write .",
-    "lint": "turbo lint"
+    "lint": "turbo lint",
+    "lint:fix": "turbo lint -- --fix"
   },
   "devDependencies": {
     "prettier": "^3.2.5",

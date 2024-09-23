@@ -10,8 +10,13 @@ const project = resolve(process.cwd(), 'tsconfig.json')
 
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
-  extends: ['eslint:recommended', 'prettier', 'turbo'],
-  plugins: ['only-warn'],
+  extends: [
+    'eslint:recommended',
+    'prettier',
+    'plugin:tailwindcss/recommended',
+    'turbo'
+  ],
+  plugins: ['only-warn', 'tailwindcss', 'simple-import-sort'],
   globals: {
     React: true,
     JSX: true
@@ -24,7 +29,17 @@ module.exports = {
       typescript: {
         project
       }
+    },
+    tailwindcss: {
+      callees: ['cn', 'cva'],
+      config: 'tailwind.config.ts'
     }
+  },
+  rules: {
+    'simple-import-sort/imports': 'warn',
+    'simple-import-sort/exports': 'warn',
+    'tailwindcss/no-custom-classname': 'off',
+    'tailwindcss/classnames-order': 'off'
   },
   ignorePatterns: [
     // Ignore dotfiles

@@ -7,6 +7,7 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'prettier',
+    'plugin:tailwindcss/recommended',
     require.resolve('@vercel/style-guide/eslint/next'),
     'turbo'
   ],
@@ -18,13 +19,23 @@ module.exports = {
     node: true,
     browser: true
   },
-  plugins: ['only-warn'],
+  plugins: ['only-warn', 'tailwindcss', 'simple-import-sort'],
   settings: {
     'import/resolver': {
       typescript: {
         project
       }
+    },
+    tailwindcss: {
+      callees: ['cn', 'cva'],
+      config: 'tailwind.config.ts'
     }
+  },
+  rules: {
+    'simple-import-sort/imports': 'warn',
+    'simple-import-sort/exports': 'warn',
+    'tailwindcss/no-custom-classname': 'off',
+    'tailwindcss/classnames-order': 'off'
   },
   ignorePatterns: [
     // Ignore dotfiles
