@@ -11,7 +11,6 @@
     "./components/*": "./src/components/*.tsx"
   },
   "scripts": {
-    "generate:component": "turbo gen react-component",
     "generate:shadcn": "pnpm dlx shadcn@latest",
     "lint": "eslint . --max-warnings 0"
   },
