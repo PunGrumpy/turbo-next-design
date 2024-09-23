@@ -1,14 +1,19 @@
 import type { PlopTypes } from '@turbo/gen'
-// Learn more about Turborepo Generators at https://turbo.build/repo/docs/core-concepts/monorepos/code-generation
+
 export default function generator(plop: PlopTypes.NodePlopAPI): void {
-  // A simple generator to add a new React component to the internal UI library
   plop.setGenerator('react-component', {
-    description: 'Adds a new react component',
+    description: 'Adds a new react component with TailwindCSS + shadcn/ui',
     prompts: [
       {
         type: 'input',
         name: 'name',
-        message: 'What is the name of the component?'
+        message: 'What is the name of the component?',
+        validate: input => {
+          if (!input.match(/^[A-Za-z]+$/)) {
+            return 'Component name should only contain letters'
+          }
+          return true
+        }
       }
     ],
     actions: [
