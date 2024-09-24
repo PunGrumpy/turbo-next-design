@@ -45,31 +45,29 @@ export default function Home() {
         </div>
 
         <div className="flex flex-wrap justify-center gap-4">
-          <Button asChild>
-            <Link
-              href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                src="/vercel.svg"
-                alt="Vercel logo"
-                width={20}
-                height={20}
-                className="mr-2 dark:invert"
-              />
-              Deploy now
-            </Link>
-          </Button>
-          <Button variant="outline" asChild>
-            <Link
-              href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Read our docs
-            </Link>
-          </Button>
+          <Link
+            className="bg-primary text-primary-foreground hover:bg-primary/90 flex items-center gap-2 rounded-full px-5 py-2 transition"
+            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src="/vercel.svg"
+              alt="Vercel logo"
+              width={20}
+              height={20}
+              className="mr-2 dark:invert"
+            />
+            Deploy now
+          </Link>
+          <Link
+            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+            className="border-primary text-primary hover:bg-primary/10 rounded-full border px-5 py-2 transition"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read our docs
+          </Link>
         </div>
 
         <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-3">
