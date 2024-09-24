@@ -21,6 +21,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   width: 'device-width',
+  initialScale: 1,
   maximumScale: 1,
   viewportFit: 'cover'
 }
@@ -36,12 +37,10 @@ export default function RootLayout({
         className={cn(
           geistSans.variable,
           geistMono.variable,
-          'bg-background min-h-screen font-sans antialiased'
+          'from-background to-secondary/20 min-h-screen bg-gradient-to-br font-sans antialiased'
         )}
       >
-        <div className="bg-background relative flex min-h-screen flex-col">
-          {children}
-        </div>
+        <div className="relative flex min-h-screen flex-col">{children}</div>
       </body>
     </html>
   )
