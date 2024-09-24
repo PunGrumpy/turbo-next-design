@@ -14,7 +14,7 @@ import Link from 'next/link'
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-between p-4 md:p-20">
-      <main className="flex w-full max-w-6xl flex-col items-center gap-12 rounded-lg">
+      <main className="flex w-full max-w-4xl flex-col items-center gap-12 rounded-lg">
         <Image
           src="/next.svg"
           alt="Next.js logo"
@@ -45,7 +45,7 @@ export default function Home() {
 
         <div className="flex flex-wrap justify-center gap-4">
           <Link
-            className="bg-primary text-primary-foreground hover:bg-primary/90 flex items-center gap-2 rounded-full px-5 py-2 transition"
+            className="bg-primary text-primary-foreground hover:bg-primary/90 flex items-center gap-2 rounded-full px-6 py-3 transition"
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
             target="_blank"
             rel="noopener noreferrer"
@@ -61,7 +61,7 @@ export default function Home() {
           </Link>
           <Link
             href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            className="border-primary text-primary hover:bg-primary/10 rounded-full border px-5 py-2 transition"
+            className="border-primary/10 text-primary hover:bg-primary/10 rounded-full border px-6 py-3 transition"
             target="_blank"
             rel="noopener noreferrer"
           >

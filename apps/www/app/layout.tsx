@@ -4,6 +4,8 @@ import { cn } from '@repo/ui/lib/utils'
 import type { Metadata, Viewport } from 'next'
 import localFont from 'next/font/local'
 
+import { ThemeProvider } from '@/components/theme-provider'
+
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
   variable: '--font-geist-sans'
@@ -16,7 +18,34 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: 'Next.js 15 with Turborepo and shadcn/ui',
   description:
-    'A modern web application using Next.js 15, Turborepo, and shadcn/ui'
+    'A modern web application using Next.js 15, Turborepo, and shadcn/ui',
+  robots: 'follow, index',
+  openGraph: {
+    title: 'Next.js 15 with Turborepo and shadcn/ui',
+    description:
+      'A modern web application using Next.js 15, Turborepo, and shadcn/ui',
+    type: 'website',
+    locale: 'en_US',
+    countryName: 'Thailand',
+    images: [
+      {
+        url: '/metadata/og-image.png',
+        alt: 'Next.js 15 with Turborepo and shadcn/ui'
+      }
+    ]
+  },
+  twitter: {
+    title: 'Next.js 15 with Turborepo and shadcn/ui',
+    description:
+      'A modern web application using Next.js 15, Turborepo, and shadcn/ui',
+    card: 'summary_large_image',
+    images: [
+      {
+        url: '/metadata/og-image.png',
+        alt: 'Next.js 15 with Turborepo and shadcn/ui'
+      }
+    ]
+  }
 }
 
 export const viewport: Viewport = {
@@ -26,11 +55,11 @@ export const viewport: Viewport = {
   viewportFit: 'cover'
 }
 
-export default function RootLayout({
-  children
-}: Readonly<{
+interface RootLayoutProps {
   children: React.ReactNode
-}>) {
+}
+
+export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
@@ -40,7 +69,14 @@ export default function RootLayout({
           'from-background to-secondary/20 min-h-screen bg-gradient-to-br font-sans antialiased'
         )}
       >
-        <div className="relative flex min-h-screen flex-col">{children}</div>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="relative flex min-h-screen flex-col">{children}</div>
+        </ThemeProvider>
       </body>
     </html>
   )
